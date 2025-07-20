@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age Calculator - Calculate Your Exact Age in Years, Months & Days</title>
-    <meta name="description" content="Free online age calculator tool. Find out exactly how old you are in years, months, and days. Perfect for birthday calculations, age verification, and more. Fast, accurate, and mobile-friendly.">
-    <meta name="keywords" content="age calculator, birthday calculator, how old am I, date calculator, age in years, age in months, age in days, exact age calculator, online age tool, birth date calculator">
+    <meta name="description"
+        content="Free online age calculator tool. Find out exactly how old you are in years, months, and days. Perfect for birthday calculations, age verification, and more. Fast, accurate, and mobile-friendly.">
+    <meta name="keywords"
+        content="age calculator, birthday calculator, how old am I, date calculator, age in years, age in months, age in days, exact age calculator, online age tool, birth date calculator">
     <meta name="author" content="YourWebsite">
     <link rel="canonical" href="https://yourwebsite.com/age-calculator">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
+
     <meta property="og:title" content="Free Online Age Calculator | Calculate Your Exact Age">
-    <meta property="og:description" content="Find out exactly how old you are in years, months, and days with our free age calculator tool.">
+    <meta property="og:description"
+        content="Find out exactly how old you are in years, months, and days with our free age calculator tool.">
     <meta property="og:url" content="https://yourwebsite.com/age-calculator">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://yourwebsite.com/images/age-calculator-preview.jpg">
-    
-    <!-- Twitter Card Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Free Online Age Calculator | Calculate Your Exact Age">
-    <meta name="twitter:description" content="Find out exactly how old you are in years, months, and days with our free age calculator tool.">
+    <meta name="twitter:description"
+        content="Find out exactly how old you are in years, months, and days with our free age calculator tool.">
     <meta name="twitter:image" content="https://yourwebsite.com/images/age-calculator-preview.jpg">
-    
-    <!-- Favicon -->
+
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
-    <!-- Structured Data for SEO -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062060956100997"
+        crossorigin="anonymous"></script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Age Calculator",
-      "url": "https://yourwebsite.com/age-calculator",
+      "url": "https://ageflow.netlify.app/",
       "description": "Free online tool to calculate your exact age in years, months, and days.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Web browser",
@@ -44,11 +48,11 @@
     }
     </script>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom fonts for better aesthetics */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(to right bottom, #e0f7fa, #b3e5fc);
@@ -62,14 +66,14 @@
             padding: 16px;
             box-sizing: border-box;
         }
-        
+
         /* Responsive container */
         .container {
             width: 100%;
             max-width: 480px;
             margin: 0 auto;
         }
-        
+
         /* Style for the message box */
         .message-box {
             position: fixed;
@@ -90,18 +94,31 @@
             max-width: 90%;
             animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
         }
-        
+
         .message-box.show {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
         }
-        
+
         /* Animation for the message box */
         @keyframes bounceIn {
-            0% { transform: translateX(-50%) translateY(-100px); opacity: 0; }
-            60% { transform: translateX(-50%) translateY(10px); opacity: 1; }
-            80% { transform: translateX(-50%) translateY(-5px); }
-            100% { transform: translateX(-50%) translateY(0); }
+            0% {
+                transform: translateX(-50%) translateY(-100px);
+                opacity: 0;
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(10px);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
         }
 
         /* Animation for the result section */
@@ -110,94 +127,111 @@
                 opacity: 0;
                 transform: scale(0.9);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
             }
         }
+
         .result-show {
             animation: fadeInScale 0.5s ease-out forwards;
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 480px) {
             main {
                 padding: 1.5rem;
             }
+
             h1 {
                 font-size: 2rem;
             }
+
             #ageDisplay {
                 font-size: 1.75rem;
             }
         }
-        
+
         /* Print styles */
         @media print {
             body {
                 background: white;
             }
+
             main {
                 box-shadow: none;
                 border: none;
             }
+
             .no-print {
                 display: none;
             }
         }
     </style>
 </head>
+
 <body class="antialiased">
     <div class="message-box" id="messageBox"></div>
 
     <div class="container">
-        <main class="bg-white p-6 sm:p-8 rounded-3xl shadow-2xl w-full mx-auto border border-blue-100 transform transition-transform duration-300 hover:scale-[1.01] relative z-10">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-6 sm:mb-8 font-['Montserrat'] tracking-tight drop-shadow-md">
+        <main
+            class="bg-white p-6 sm:p-8 rounded-3xl shadow-2xl w-full mx-auto border border-blue-100 transform transition-transform duration-300 hover:scale-[1.01] relative z-10">
+            <h1
+                class="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-6 sm:mb-8 font-['Montserrat'] tracking-tight drop-shadow-md">
                 <span class="text-blue-500">✨</span> Age Calculator <span class="text-blue-500">✨</span>
             </h1>
-            
-            <!-- Top Ad Unit (Leaderboard) -->
-            <div class="no-print mb-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
+
+            <div
+                class="no-print mb-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
                 <p class="font-semibold mb-2 text-xs">Advertisement</p>
-                <!-- Replace with your Google AdSense code -->
-                <div class="bg-gray-200 h-[90px] flex items-center justify-center rounded-md text-gray-500">
-                    [Leaderboard Ad - 728x90]
-                </div>
+                <ins class="adsbygoogle" style="display:block;width:728px;height:90px; margin: 0 auto;"
+                    data-ad-client="ca-pub-4062060956100997" data-ad-slot="5092115319"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 <p class="mt-1 text-xs text-gray-500">Supports our free tools</p>
             </div>
 
             <div class="mb-6">
-                <label for="dob" class="block text-gray-700 text-base font-medium mb-2">Select Your Date of Birth:</label>
-                <input type="date" id="dob" class="w-full px-4 py-3 sm:px-5 sm:py-3 border border-blue-300 rounded-xl focus:ring-4 focus:ring-blue-400 focus:border-blue-500 transition duration-300 ease-in-out text-gray-800 shadow-sm hover:border-blue-400 cursor-pointer">
-                <p class="text-xs text-gray-500 mt-1 text-right">We don't store your birth date - calculations happen in your browser</p>
+                <label for="dob" class="block text-gray-700 text-base font-medium mb-2">Select Your Date of
+                    Birth:</label>
+                <input type="date" id="dob"
+                    class="w-full px-4 py-3 sm:px-5 sm:py-3 border border-blue-300 rounded-xl focus:ring-4 focus:ring-blue-400 focus:border-blue-500 transition duration-300 ease-in-out text-gray-800 shadow-sm hover:border-blue-400 cursor-pointer">
+                <p class="text-xs text-gray-500 mt-1 text-right">We don't store your birth date - calculations happen in
+                    your browser</p>
             </div>
 
-            <button id="calculateBtn" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-blue-500/50 transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-300">
+            <button id="calculateBtn"
+                class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-blue-500/50 transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-300">
                 Calculate My Age
             </button>
 
-            <div id="result" class="mt-7 p-5 sm:p-7 bg-blue-50 rounded-2xl border border-blue-200 text-center text-gray-800 hidden shadow-inner">
+            <div id="result"
+                class="mt-7 p-5 sm:p-7 bg-blue-50 rounded-2xl border border-blue-200 text-center text-gray-800 hidden shadow-inner">
                 <p class="text-lg sm:text-xl font-semibold mb-3 text-blue-700">Your Exact Age is:</p>
                 <p id="ageDisplay" class="text-2xl sm:text-3xl font-extrabold text-blue-800 leading-tight"></p>
-                <button id="printBtn" class="mt-4 px-4 py-2 bg-white border border-blue-300 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm no-print">
+                <button id="printBtn"
+                    class="mt-4 px-4 py-2 bg-white border border-blue-300 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm no-print">
                     Print Results
                 </button>
             </div>
-            
-            <!-- Middle Ad Unit (Medium Rectangle) -->
-            <div class="no-print mt-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
+
+            <div
+                class="no-print mt-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
                 <p class="font-semibold mb-2 text-xs">Advertisement</p>
-                <!-- Replace with your Google AdSense code -->
-                <div class="bg-gray-200 h-[250px] flex items-center justify-center rounded-md text-gray-500">
-                    [Medium Rectangle Ad - 300x250]
-                </div>
+                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px; margin: 0 auto;"
+                    data-ad-client="ca-pub-4062060956100997" data-ad-slot="2103167504"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 <p class="mt-1 text-xs text-gray-500">Thank you for supporting us</p>
             </div>
-            
-            <!-- Additional Information Section for SEO -->
+
             <div class="mt-6 text-gray-700 text-sm">
                 <h2 class="font-bold text-lg mb-2 text-blue-800">About Our Age Calculator</h2>
-                <p class="mb-2">Our free age calculator tool helps you determine your exact age in years, months, and days from your date of birth to today's date. It's perfect for:</p>
+                <p class="mb-2">Our free age calculator tool helps you determine your exact age in years, months, and
+                    days from your date of birth to today's date. It's perfect for:</p>
                 <ul class="list-disc pl-5 mb-3 space-y-1">
                     <li>Finding out how many days until your next birthday</li>
                     <li>Calculating age for official documents</li>
@@ -206,21 +240,23 @@
                 </ul>
                 <p>The calculator accounts for leap years and varying month lengths to provide accurate results.</p>
             </div>
-            
-            <!-- Bottom Ad Unit (Responsive Ad) -->
-            <div class="no-print mt-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
+
+            <div
+                class="no-print mt-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
                 <p class="font-semibold mb-2 text-xs">Advertisement</p>
-                <!-- Replace with your Google AdSense code -->
-                <div class="bg-gray-200 h-[100px] sm:h-[90px] flex items-center justify-center rounded-md text-gray-500">
-                    [Responsive Ad - 320x100 or 728x90]
-                </div>
+                <ins class="adsbygoogle" style="display:block; text-align:center;"
+                    data-ad-client="ca-pub-4062060956100997" data-ad-slot="6449429019"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 <p class="mt-1 text-xs text-gray-500">Your support helps keep this tool free</p>
             </div>
         </main>
 
         <footer class="mt-6 text-gray-600 text-sm text-center no-print">
-            &copy; <span id="currentYear"></span> Age Calculator Tool. All rights reserved. | 
-            <a href="/privacy" class="text-blue-600 hover:underline">Privacy Policy</a> | 
+            &copy; <span id="currentYear"></span> Age Calculator Tool. All rights reserved. |
+            <a href="/privacy" class="text-blue-600 hover:underline">Privacy Policy</a> |
             <a href="/terms" class="text-blue-600 hover:underline">Terms of Service</a>
         </footer>
     </div>
@@ -244,7 +280,7 @@
             messageBox.textContent = message;
             messageBox.classList.remove('show');
             messageBox.style.backgroundColor = '';
-            
+
             if (type === 'error') {
                 messageBox.style.backgroundColor = '#ef4444'; // Tailwind red-500
             } else if (type === 'success') {
@@ -252,7 +288,7 @@
             } else {
                 messageBox.style.backgroundColor = '#3b82f6'; // Tailwind blue-500
             }
-            
+
             requestAnimationFrame(() => {
                 messageBox.classList.add('show');
             });
@@ -304,45 +340,45 @@
             const yearText = years === 1 ? 'year' : 'years';
             const monthText = months === 1 ? 'month' : 'months';
             const dayText = days === 1 ? 'day' : 'days';
-            
+
             ageDisplay.innerHTML = `${years} <span class="text-blue-600">${yearText}</span>, ${months} <span class="text-blue-600">${monthText}</span>, and ${days} <span class="text-blue-600">${dayText}</span>`;
             resultDiv.classList.remove('hidden');
             resultDiv.classList.add('result-show');
             showMessageBox('Age calculated successfully!', 'success');
-            
+
             // Scroll to results for better mobile UX
             resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // Event listeners
         calculateBtn.addEventListener('click', calculateAge);
-        
+
         // Allow Enter key to trigger calculation
-        dobInput.addEventListener('keypress', function(e) {
+        dobInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 calculateAge();
             }
         });
-        
+
         // Print functionality
-        printBtn.addEventListener('click', function() {
+        printBtn.addEventListener('click', function () {
             window.print();
         });
 
         // Set the max date for the input to today's date
-        window.onload = function() {
+        window.onload = function () {
             const today = new Date();
             const year = today.getFullYear();
             const month = (today.getMonth() + 1).toString().padStart(2, '0');
             const day = today.getDate().toString().padStart(2, '0');
             dobInput.setAttribute('max', `${year}-${month}-${day}`);
-            
+
             // Set current year in footer
             currentYearSpan.textContent = year;
-            
+
             // Auto-focus the date input for better UX
             dobInput.focus();
-            
+
             // Check for URL parameters to pre-fill date (useful for sharing)
             const urlParams = new URLSearchParams(window.location.search);
             const dobParam = urlParams.get('dob');
@@ -352,9 +388,9 @@
                 setTimeout(calculateAge, 500);
             }
         };
-        
+
         // Track button clicks for analytics (replace with your actual analytics code)
-        calculateBtn.addEventListener('click', function() {
+        calculateBtn.addEventListener('click', function () {
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'click', {
                     'event_category': 'Calculator',
@@ -363,21 +399,18 @@
             }
         });
     </script>
-    
-    <!-- Google AdSense Script (replace with your actual publisher ID) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
-    
-    <!-- Structured Data for Calculator -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Calculator",
       "name": "Age Calculator",
       "description": "Calculate your exact age in years, months, and days",
-      "url": "https://yourwebsite.com/age-calculator",
+      "url": "https://ageflow.netlify.app/",
       "operatingSystem": "All",
       "applicationCategory": "WebApplication"
     }
     </script>
 </body>
+
 </html>
