@@ -9,7 +9,7 @@
         content="Free online age calculator tool. Find out exactly how old you are in years, months, and days. Perfect for birthday calculations, age verification, and more. Fast, accurate, and mobile-friendly.">
     <meta name="keywords"
         content="age calculator, birthday calculator, how old am I, date calculator, age in years, age in months, age in days, exact age calculator, online age tool, birth date calculator">
-    <meta name="author" content="YourWebsite">
+    <meta name="author" content="AgeFlow">
     <link rel="canonical" href="https://yourwebsite.com/age-calculator">
 
     <meta property="og:title" content="Free Online Age Calculator | Calculate Your Exact Age">
@@ -62,7 +62,9 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            /* Ensure no default body margin causes scroll */
             overflow-x: hidden;
+            /* Crucial: Prevent horizontal scrolling */
             padding: 16px;
             box-sizing: border-box;
         }
@@ -70,8 +72,9 @@
         /* Responsive container */
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 800px;
             margin: 0 auto;
+            /* Ensures it's centered if wider than its content */
         }
 
         /* Style for the message box */
@@ -92,12 +95,15 @@
             text-align: center;
             min-width: 250px;
             max-width: 90%;
-            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+            /* Limit max-width to a percentage to prevent overflow on very small screens */
+            box-sizing: border-box;
+            /* Ensure padding doesn't add to max-width */
         }
 
         .message-box.show {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
         }
 
         /* Animation for the message box */
@@ -153,6 +159,25 @@
             }
         }
 
+        /* Ad Unit Specific Fixes */
+        .adsbygoogle {
+            max-width: 100% !important;
+            /* Ensure ads don't force overflow */
+            overflow: hidden;
+            /* Hide any overflowing ad content */
+        }
+
+        /* This specifically targets the first ad unit which had a fixed width */
+        ins[data-ad-slot="5092115319"] {
+            width: auto !important;
+            /* Let it take natural width */
+            min-width: 300px;
+            /* Minimum width for ad viability, adjust as needed */
+            max-width: 100% !important;
+            /* Ensure it never exceeds parent width */
+        }
+
+
         /* Print styles */
         @media print {
             body {
@@ -178,20 +203,16 @@
         <main
             class="bg-white p-6 sm:p-8 rounded-3xl shadow-2xl w-full mx-auto border border-blue-100 transform transition-transform duration-300 hover:scale-[1.01] relative z-10">
             <h1
-                class="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-6 sm:mb-8 font-['Montserrat'] tracking-tight drop-shadow-md">
+                class="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-4 font-['Montserrat'] tracking-tight drop-shadow-md">
                 <span class="text-blue-500">✨</span> Age Calculator <span class="text-blue-500">✨</span>
             </h1>
 
-            <div
-                class="no-print mb-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
-                <p class="font-semibold mb-2 text-xs">Advertisement</p>
-                <ins class="adsbygoogle" style="display:block;width:728px;height:90px; margin: 0 auto;"
-                    data-ad-client="ca-pub-4062060956100997" data-ad-slot="5092115319"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <p class="mt-1 text-xs text-gray-500">Supports our free tools</p>
-            </div>
+            <p class="mb-6 text-gray-700 text-base text-center">
+                Welcome to our <strong>free online age calculator</strong>! Discover your exact age in years, months,
+                and days with just a few clicks. This tool is perfect for calculating age for any purpose, from personal
+                curiosity to official documentation. Simply select your date of birth below to get started. Our accurate
+                and user-friendly calculator takes the guesswork out of determining age.
+            </p>
 
             <div class="mb-6">
                 <label for="dob" class="block text-gray-700 text-base font-medium mb-2">Select Your Date of
@@ -220,6 +241,103 @@
             <div
                 class="no-print mt-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
                 <p class="font-semibold mb-2 text-xs">Advertisement</p>
+                <ins class="adsbygoogle" style="display:block;width:100%;height:90px; margin: 0 auto;"
+                    data-ad-client="ca-pub-4062060956100997" data-ad-slot="5092115319"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <p class="mt-1 text-xs text-gray-500">Supports our free tools</p>
+            </div>
+
+            <hr class="my-8 border-gray-300">
+
+            <div class="mt-8 text-gray-700 text-sm">
+                <h2 class="font-bold text-lg mb-3 text-blue-800">How Our Age Calculator Works</h2>
+                <p class="mb-3">Our <strong>Age Calculator</strong> uses a straightforward yet precise method to
+                    determine your age. When you input your birth date, the calculator instantly computes the duration
+                    from that specific date to the <strong>current date</strong> (July 21, 2025). It meticulously
+                    accounts for:</p>
+                <ul class="list-disc pl-5 mb-3 space-y-1">
+                    <li><strong>Leap Years:</strong> Ensuring that an extra day in February is correctly factored in
+                        every four years, preventing inaccuracies.</li>
+                    <li><strong>Varying Month Lengths:</strong> Whether a month has 30 or 31 days (or 28/29 in
+                        February), the calculation adjusts precisely.</li>
+                    <li><strong>Exact Day Count:</strong> You get your age broken down into full years, months, and even
+                        the remaining days, providing a complete picture.</li>
+                </ul>
+                <p>This process guarantees that you receive an <strong>accurate and reliable age calculation</strong>
+                    every time, making it dependable for both casual use and more formal requirements.</p>
+            </div>
+
+            <hr class="my-8 border-gray-300">
+
+            <div class="mt-6 text-gray-700 text-sm">
+                <h2 class="font-bold text-lg mb-3 text-blue-800">Why Calculate Your Exact Age?</h2>
+                <p class="mb-3">Knowing your precise age in years, months, and days can be more useful than you might
+                    think! Beyond just curiosity, an exact age calculation is vital for numerous situations:</p>
+                <ul class="list-disc pl-5 mb-3 space-y-1">
+                    <li><strong>Official Documentation:</strong> Many legal forms, applications (e.g., for school, jobs,
+                        or government services), and insurance policies require your exact age on a specific date.</li>
+                    <li><strong>Retirement Planning:</strong> Calculating your age down to the day can help determine
+                        eligibility for benefits or specific retirement programs.</li>
+                    <li><strong>Medical Records:</strong> Accurate age is crucial for dosage calculations, tracking
+                        developmental milestones in children, or understanding age-related health risks.</li>
+                    <li><strong>Academic Admissions:</strong> Certain educational institutions or programs might have
+                        strict age cut-offs, making precise age calculation essential.</li>
+                    <li><strong>Personal Milestones:</strong> Want to know exactly how many days old you are? Or how
+                        many days until your next big birthday? Our tool makes it easy to track these personal
+                        milestones.</li>
+                    <li><strong>Legal Purposes:</strong> For contracts, wills, or other legal agreements, the exact age
+                        of individuals involved can be a critical detail.</li>
+                </ul>
+                <p>Our age calculator simplifies these needs, providing you with <strong>quick and verified age
+                        details</strong> whenever you need them.</p>
+            </div>
+
+            <hr class="my-8 border-gray-300">
+
+            <div class="mt-6 text-gray-700 text-sm">
+                <h2 class="font-bold text-lg mb-3 text-blue-800">Frequently Asked Questions (FAQs)</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-semibold text-base text-blue-700 mb-1">Q: Is this age calculator free to use?
+                        </h3>
+                        <p>A: Yes, absolutely! Our age calculator is completely free to use, and there are no hidden
+                            charges or subscriptions required. You can use it as many times as you need.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base text-blue-700 mb-1">Q: Do you store my date of birth
+                            information?</h3>
+                        <p>A: No, we do not store any personal information, including your date of birth. All age
+                            calculations are performed client-side, directly in your web browser, ensuring your privacy
+                            and data security.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base text-blue-700 mb-1">Q: How accurate is this age calculator?
+                        </h3>
+                        <p>A: Our calculator is designed for high accuracy. It correctly accounts for leap years and the
+                            precise number of days in each month to give you your exact age in years, months, and days.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base text-blue-700 mb-1">Q: Can I calculate the age for someone
+                            else?</h3>
+                        <p>A: Yes, you can! Simply input their date of birth into the selector, and the calculator will
+                            provide their exact age based on today's date.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-base text-blue-700 mb-1">Q: What if I select a future date as my
+                            date of birth?</h3>
+                        <p>A: The calculator will display an error message if you select a future date, as a date of
+                            birth cannot be in the future. Please ensure you select a date from the past or today's
+                            date.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="no-print mt-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
+                <p class="font-semibold mb-2 text-xs">Advertisement</p>
                 <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px; margin: 0 auto;"
                     data-ad-client="ca-pub-4062060956100997" data-ad-slot="2103167504"></ins>
                 <script>
@@ -228,25 +346,12 @@
                 <p class="mt-1 text-xs text-gray-500">Thank you for supporting us</p>
             </div>
 
-            <div class="mt-6 text-gray-700 text-sm">
-                <h2 class="font-bold text-lg mb-2 text-blue-800">About Our Age Calculator</h2>
-                <p class="mb-2">Our free age calculator tool helps you determine your exact age in years, months, and
-                    days from your date of birth to today's date. It's perfect for:</p>
-                <ul class="list-disc pl-5 mb-3 space-y-1">
-                    <li>Finding out how many days until your next birthday</li>
-                    <li>Calculating age for official documents</li>
-                    <li>Determining school or retirement eligibility</li>
-                    <li>Tracking developmental milestones</li>
-                </ul>
-                <p>The calculator accounts for leap years and varying month lengths to provide accurate results.</p>
-            </div>
-
             <div
                 class="no-print mt-6 p-3 bg-gray-100 rounded-lg text-center text-gray-600 text-sm border border-gray-200">
                 <p class="font-semibold mb-2 text-xs">Advertisement</p>
                 <ins class="adsbygoogle" style="display:block; text-align:center;"
-                    data-ad-client="ca-pub-4062060956100997" data-ad-slot="6449429019"
-                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    data-ad-client="ca-pub-4062060956100997" data-ad-slot="6449429019" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
@@ -278,7 +383,7 @@
          */
         function showMessageBox(message, type = 'info') {
             messageBox.textContent = message;
-            messageBox.classList.remove('show');
+            messageBox.classList.remove('show'); // Ensure it's hidden before reappearing
             messageBox.style.backgroundColor = '';
 
             if (type === 'error') {
@@ -289,10 +394,12 @@
                 messageBox.style.backgroundColor = '#3b82f6'; // Tailwind blue-500
             }
 
+            // Use requestAnimationFrame for smoother animation
             requestAnimationFrame(() => {
                 messageBox.classList.add('show');
             });
 
+            // Automatically hide after a few seconds
             setTimeout(() => {
                 messageBox.classList.remove('show');
             }, 3500);
@@ -312,7 +419,7 @@
             }
 
             const dob = new Date(dobString);
-            const today = new Date();
+            const today = new Date(); // Gets the current date and time
 
             if (dob > today) {
                 showMessageBox('Date of birth cannot be in the future. Please select a valid date.', 'error');
@@ -321,13 +428,18 @@
                 return;
             }
 
-            let years = today.getFullYear() - dob.getFullYear();
-            let months = today.getMonth() - dob.getMonth();
-            let days = today.getDate() - dob.getDate();
+            // Create new Date objects for comparison to avoid time component issues
+            const dobDateOnly = new Date(dob.getFullYear(), dob.getMonth(), dob.getDate());
+            const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+            let years = todayDateOnly.getFullYear() - dobDateOnly.getFullYear();
+            let months = todayDateOnly.getMonth() - dobDateOnly.getMonth();
+            let days = todayDateOnly.getDate() - dobDateOnly.getDate();
 
             if (days < 0) {
                 months--;
-                const prevMonthLastDay = new Date(today.getFullYear(), today.getMonth(), 0);
+                // Get the last day of the previous month relative to today's month/year
+                const prevMonthLastDay = new Date(todayDateOnly.getFullYear(), todayDateOnly.getMonth(), 0);
                 days += prevMonthLastDay.getDate();
             }
 
@@ -365,7 +477,7 @@
             window.print();
         });
 
-        // Set the max date for the input to today's date
+        // Set the max date for the input to today's date and handle initial load
         window.onload = function () {
             const today = new Date();
             const year = today.getFullYear();
@@ -384,8 +496,8 @@
             const dobParam = urlParams.get('dob');
             if (dobParam) {
                 dobInput.value = dobParam;
-                // Calculate automatically if date is provided in URL
-                setTimeout(calculateAge, 500);
+                // Calculate automatically if date is provided in URL, with a slight delay
+                setTimeout(calculateAge, 100);
             }
         };
 
